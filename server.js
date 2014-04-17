@@ -16,7 +16,7 @@ app.set('view engine', 'handlebars');
 
 function checkLoggedIn(req, res, next){
 	console.log('inside checkLoggedIn');
- 
+
 	if (req.session.username) {
 		res.locals.loggedInUsername = req.session.username;
 	}
@@ -104,15 +104,19 @@ app.post('/login', function(req, res){
 	}
 });
 
-// /set_session?username=abc
+// /set_session?myValue=abc
 app.get('/set_session', function(req, res){
-	req.session.username = req.query.username;
+  if (!req.query.myValue){
+    res.send("Please add a 'myValue' query to the URL like /set_session?myValue=abc");
+  } else {
+    req.session.myValue = req.query.myValue;
+    res.send("Session's 'myValue' was set. Visit /see_session to view it.");
+  }
 
-	res.send("Session was set");
-}); 
+});
 
 app.get('/see_session', function(req, res){
-	res.send("session.username: " + req.session.username);
+	res.send("session.myValue: " + req.session.myValue);
 });
 
 

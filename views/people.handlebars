@@ -1,1 +1,6 @@
-The person's id is: {{id}}.
+{{#if id}}
+  The person's id is: {{id}}.
+{{else}}
+  There was no "?id=X" in the URL. Try: /people?id=banana
+{{/if}}
+
