@@ -1,0 +1,49 @@
+{{#if loggedInUsername}}
+	You are logged in as: {{loggedInUsername}}.
+{{/if}}
+
+<h1>Hello everyone</h1>
+
+{{ name }} is {{ age }} years old.
+
+And lives at {{ address.streetNumber }} {{ address.streetName }}.
+
+
+{{> extra}}
+
+<br>
+<Br>
+
+<h3>Athletes</h3>
+
+{{#each athletes}}
+
+{{ this.name }} plays/played for {{ this.team }}
+
+{{/each}}
+
+<br>
+<br>
+
+{{#if itIsNight}}
+It is night.
+{{else}}
+It is NOT night.
+{{/if}}
+
+Today is: {{formatDate today}}.
+
+Today's fruit is: {{fruit}}.
+
+{{> extra}}
+{{> extra}}
+{{> extra}}
+{{> extra}}
+{{> extra}}
+
+
+
+
+
+
+

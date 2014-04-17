@@ -1,0 +1,20 @@
+This is the login page.
+
+<p>
+{{#if loggedIn}}
+You succesfully logged in.
+{{/if}}
+
+{{#if failedLogin}}
+Please try again.
+{{/if}}
+</p>
+
+<form action="/login" method="post">
+
+Username: <input type='text' name='username' placeholder='enter your username'><br>
+Password: <input type='password' name='password' placeholder='your password here...'><br>
+
+<button type='submit'>Submit</button>
+
+</form>
